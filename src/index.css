@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=DM+Sans:wght@400;700&family=Inter:wght@400;700&family=Poppins&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-Poppins scroll-smooth;
+}
+
+body {
+  @apply box-border bg-white dark:bg-black text-gray-100 duration-500;
+}

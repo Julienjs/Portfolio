@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .moon_colors {
+    color: #ebd953;
+    filter: drop-shadow(0 0 2px #ebd953) drop-shadow(0 0 5px #ebd953)
+      drop-shadow(0 0 15px #ebd953);
+  }
+}
