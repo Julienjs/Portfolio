@@ -1,0 +1,83 @@
+.swiper {
+  width: 100%;
+  height: 820px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 450px;
+  height: 650px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #ffcf20;
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-pagination-bullet-active-prev,
+.swiper-pagination-bullet-active-next,
+.swiper-pagination-bullet-active-prev-prev,
+.swiper-pagination-bullet-active-next-next {
+  background-color: grey;
+  opacity: 0.5;
+}
+
+@media (max-width: 820px) {
+  .swiper-pagination-bullet {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 369px) {
+  .swiper-slide {
+    width: 310px;
+    height: 680px;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 389px) {
+  .swiper-slide {
+    width: 365px;
+    height: 680px;
+  }
+}
+
+@media screen and (min-width: 390px) and (max-width: 820px) {
+  .swiper-slide {
+    width: 380px;
+    height: 680px;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* swiper */
+.boxHover-md:hover .openBtn {
+  @apply opacity-100 xl:translate-y-[200px];
+}
+
+.card-md {
+  @apply my-rotate-y-180 md:rotate-0 preserve-3d md:perspective md:translate-x-1/2;
+}
+
+.imgBox-md {
+  @apply md:preserve-3d md:perspective md:z-10 md:origin-left;
+}
+
+.card-md .imgBox-md {
+  @apply sm:my-rotate-y-0 md:-my-rotate-y-180;
+}
+
+.openBtn:before {
+  @apply content-[''] absolute w-0 h-0  rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] duration-700 -z-10;
+}
+
+.openBtn:hover:before {
+  @apply w-full pt-[100%];
+}
