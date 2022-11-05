@@ -27,9 +27,9 @@ const Filter = ({ data, setFiltered, activeGenre, setActiveGenre }) => {
       {languages.map((lang, index) => (
         <button
           key={index}
-          className={`border mb-2 mr-3 border-yellow text-yellow rounded-full py-1 px-3 max-w-max flex justify-center font-medium items-center ${
+          className={`border mb-2 mr-3 border-blue text-blue dark:border-yellow dark:text-yellow rounded-full py-1 px-3 max-w-max flex justify-center font-medium items-center ${
             activeGenre === lang.name
-              ? "bg-yellow text-[#000] duration-500"
+              ? "bg-blue dark:bg-yellow text-[#fff] dark:text-[#000] duration-500"
               : null
           }`}
           onClick={() => setActiveGenre(lang.name)}

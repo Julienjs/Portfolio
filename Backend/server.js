@@ -1,15 +1,73 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const creds = require("./credential.json");
 const nodemailer = require("nodemailer");
 const inLineCss = require("nodemailer-juice");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+const { body, validationResult } = require("express-validator");
+require("dotenv").config({ path: "./.env" });
 
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
+
 // Middleware
 app.use("/public", express.static(path.join(__dirname, "public")));
+
+// express-validator
+const rules = () => {
+  return [
+    body("email")
+      .notEmpty()
+      .withMessage("champs requis")
+      .bail()
+      .isEmail()
+      .trim()
+      .escape()
+      .withMessage("Veuillez saisir une adresse mail valide")
+      .normalizeEmail(),
+    body("lastname")
+      .notEmpty()
+      .withMessage("champs requis")
+      .bail()
+      .isAlpha()
+      .withMessage("Ce champs ne doit pas contenir de chiffre")
+      .bail()
+      .isLength({ min: 2 })
+      .withMessage("Ce champs doit contenir au moins 2 caractères"),
+    body("firstname")
+      .notEmpty()
+      .withMessage("champs requis")
+      .bail()
+      .isAlpha()
+      .withMessage("Ce champs ne doit pas contenir de chiffre")
+      .bail()
+      .isLength({ min: 2 })
+      .withMessage("Ce champs doit contenir au moins 2 caractères"),
+    body("subject")
+      .notEmpty()
+      .withMessage("champs requis")
+      .bail()
+      .isLength({ min: 8 })
+      .withMessage("Vous devez entrer au moins 8 caractères"),
+    body("message")
+      .notEmpty()
+      .withMessage("champs requis")
+      .bail()
+      .isLength({ min: 10 })
+      .withMessage("Votre message doit contenir au moins 10 caractères"),
+  ];
+};
+
+const validate = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  } else {
+    next();
+  }
+};
 
 app.get("/", (req, res) => {
   res.send("hello");
@@ -21,13 +79,13 @@ app.use(express.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: creds.auth.user,
-    pass: creds.auth.pass,
+    user: process.env.MAIL,
+    pass: process.env.PASSWORD,
   },
 });
 transporter.use("compile", inLineCss());
 
-app.post("/mail", (req, res, next) => {
+app.post("/mail", rules(), validate, (req, res, next) => {
   const email = req.body.email;
   const message = req.body.message;
   const firstname = req.body.firstname;
@@ -36,7 +94,7 @@ app.post("/mail", (req, res, next) => {
 
   const mailOptions = {
     from: email,
-    to: creds.auth.user,
+    to: process.env.MAIL,
     subject: `Message de ${email}: ${subject}`,
     attachments: [
       {

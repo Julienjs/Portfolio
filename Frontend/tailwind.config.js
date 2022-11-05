@@ -18,6 +18,19 @@ const Myclass = plugin(function ({ addUtilities }) {
     ".perspective": {
       perspective: "perspective(1000px)",
     },
+    ".card-shadow-dark": {
+      boxShadow:
+        "inset 10px 10px 20px #192230, inset -10px -10px 20px #233046;",
+    },
+    ".card-shadow": {
+      boxShadow: "-9px 9px 9px #c2c2c2",
+    },
+    ".text-shadow": {
+      boxShadow: "-9px 9px 15px #a6a6a6, 9px -9px 15px #ffffff",
+    },
+    ".text-shadow-dark": {
+      boxShadow: "9px -9px 15px #273141, -9px 9px 15px #3f5169",
+    },
     ".btn-shadow": {
       background: "linear-gradient(145deg, #ffffff, #e6e6e6)",
       boxShadow: "5px 5px 10px #d1d1d1,-5px -5px 10px #ffffff",
@@ -55,6 +68,7 @@ module.exports = {
       },
       colors: {
         yellow: "#ffcf20",
+        blue: "#3598FE",
       },
       transitionProperty: {
         width: "width",

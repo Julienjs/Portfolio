@@ -8,5 +8,5 @@ html {
 }
 
 body {
-  @apply box-border bg-white dark:bg-black text-gray-100 duration-500;
+  @apply box-border bg-white dark:bg-slate-800 text-gray-100 duration-500;
 }

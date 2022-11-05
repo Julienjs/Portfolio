@@ -26,13 +26,16 @@ const Coordinates = () => {
   ];
 
   return (
-    <div className="text-3xl w-1/2 h-full flex flex-col items-start justify-around">
+    <div className="text-2xl mb-4 xl:mb-0 p-5 xl:text-3xl w-full xl:xl:w-1/2 h-full flex flex-col items-start justify-around">
       <div className=" ">
         <h2 className="font-medium">Réseaux sociaux</h2>
-        <div className="flex border-t-4 border-l-4 rounded-bl-sm p-2 mt-2 border-yellow text-4xl ">
+        <div className="flex border-t-4 border-l-4 rounded-bl-sm p-2 mt-2 border-blue dark:border-yellow text-4xl ">
           {socialNetworks.map((item, index) => (
-            <div className="hover:text-yellow hover:duration-500 hover:ease-linear cursor-pointer mr-2">
-              <ion-icon key={index} name={item.name}></ion-icon>
+            <div
+              key={index}
+              className="hover:text-blue dark:hover:text-yellow hover:duration-500 hover:ease-linear cursor-pointer mr-2"
+            >
+              <ion-icon name={item.name}></ion-icon>
             </div>
           ))}
         </div>
@@ -49,7 +52,7 @@ const Coordinates = () => {
               }
             `}
           >
-            <div className="border-2 w-12 h-12 border-yellow rounded-full flex items-center justify-center mr-2">
+            <div className="border-2 w-12 h-12 border-blue dark:border-yellow rounded-full flex items-center justify-center mr-2">
               <ion-icon name={coord.name}></ion-icon>
             </div>
             {coord.adress ? (

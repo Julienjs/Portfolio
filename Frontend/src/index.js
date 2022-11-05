@@ -6,9 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar/Navbar";
 import DarkMode from "./components/DarkMode/DarkMode";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
 import Bot from "./components/Bot";
-import { StyledEngineProvider } from "@mui/material/styles";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>

@@ -1,31 +1,24 @@
-import React,{useState} from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React from "react";
+import { useLocation, NavLink } from "react-router-dom";
 import ToolTips from "../Tooltips";
 
 import { motion } from "framer-motion";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const menu_1 = [
-    {id:1, icon: "home-outline", text: "Accueil", link: "/" },
-    {id:2, icon: "person-outline", text: "A propos", link: "/about" },
-    {id:3, icon: "briefcase-outline", text: "Compétences", link: "/skills" },
+    { id: 1, icon: "home-outline", text: "Accueil", link: "" },
+    { id: 2, icon: "person-outline", text: "A propos", link: "about" },
+    { id: 3, icon: "briefcase-outline", text: "Compétences", link: "skills" },
   ];
 
   const menu_2 = [
-    { icon: "book-outline", text: "Projets", link: "/projects" },
-    { icon: "chatbox-outline", text: "Contact", link: "/contact" },
+    { icon: "book-outline", text: "Projets", link: "projects" },
+    { icon: "chatbox-outline", text: "Contact", link: "contact" },
     { icon: "document-text-outline", text: "CV" },
   ];
-
-  const navLink = (link) => {
-    if (link) {
-      navigate(link);
-    }
-  };
 
   return (
     <motion.div
@@ -42,10 +35,9 @@ const Navbar = () => {
       >
         {menu_1.map((list, i) => (
           <ToolTips title={list.text} placement={"top"} key={`${list}-${i}`}>
-            <ion-icon
-              name={list.icon}
-              onClick={() => navLink(list.link)}
-            ></ion-icon>
+            <NavLink to={`/${list.link}`}>
+              <ion-icon name={list.icon}></ion-icon>
+            </NavLink>
           </ToolTips>
         ))}
       </div>
@@ -56,10 +48,9 @@ const Navbar = () => {
       >
         {menu_2.map((list, index) => (
           <ToolTips key={index} title={list.text} placement={"top"}>
-            <ion-icon
-              onClick={() => navLink(list.link)}
-              name={list.icon}
-            ></ion-icon>
+            <NavLink to={`/${list.link}`}>
+              <ion-icon name={list.icon}></ion-icon>
+            </NavLink>
           </ToolTips>
         ))}
       </div>
