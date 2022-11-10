@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 /* Hero */
-.wrapper::after {
-  /* @apply content-[""] w-full h-[100%] bg-black absolute top-0 left-0 opacity-50; */
-}
 .btn1::before {
   @apply content-[""] absolute w-0 h-0 bg-[rgba(189,153,21,0.41)] rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] duration-500 -z-10;
 }
@@ -19,9 +16,6 @@
   @apply content-[""] absolute w-0 h-0 bg-[rgba(255,255,255,0.24)] rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] duration-500 -z-10;
 }
 
-/* .btn2:hover:before {
-  @apply w-full border-2 border-white;
-} */
 
 @layer components {
   .sectionHero {

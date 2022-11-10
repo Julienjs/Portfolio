@@ -9,14 +9,14 @@
 }
 
 .control-btn {
-  @apply bg-white/[0.41] dark:bg-black/[0.21] absolute left-[50%] top-[50%] cursor-pointer h-14 w-14 md:h-20 md:w-20 translate-x-[-50%] translate-y-[-50%] flex items-center justify-center rounded-full border-2 border-blue dark:border-yellow transition-[top,background,color] delay-[0.7s,2.5s,0s] text-black dark:text-white duration-300;
+  @apply bg-black/[0.21] absolute left-[50%] top-[50%] cursor-pointer h-14 w-14 md:h-20 md:w-20 translate-x-[-50%] translate-y-[-50%] flex items-center justify-center rounded-full border-2 border-blue/50 dark:border-yellow transition-[top,background,color] delay-[0.7s,2.5s,0s] text-white duration-300;
 }
 
 .bottomNav:has(#check:checked) {
   @apply right-[50%] bg-white/[0.21] backdrop-blur dark:bg-black/[0.21] translate-x-[50%] w-[90%] md:w-[60%] xl:w-[40%] 2xl:w-[25%] border transition-[width,right,border,backdrop-filter,background] delay-[1s,0s,1s,1s,1s] duration-500;
 }
 
-svg {
+.bottomNav svg {
   @apply duration-300 delay-[1s] cursor-pointer;
 }
 
@@ -24,9 +24,15 @@ svg {
   @apply -rotate-[135deg] delay-[2s] ;
 }
 
-.control-btn:has(#check:checked) {
-  @apply top-0 transition-[top,background,color,box-shadow] delay-[2.5s,0s,0s,2.5s] bg-blue dark:bg-yellow shadow-md shadow-gray-600/50 text-white;
+.control-btn-home-checked:has(#check:checked) {
+  @apply top-0 transition-[top,background,color,box-shadow] delay-[2.5s,0s,0s,2.5s] bg-yellow text-white ;
 }
+
+.control-btn-checked:has(#check:checked) {
+  @apply top-0 transition-[top,background,color,box-shadow] delay-[2.5s,0s,0s,2.5s] bg-blue dark:bg-yellow text-white;
+}
+
+
 
 a {
   @apply w-[20%] flex items-center justify-start

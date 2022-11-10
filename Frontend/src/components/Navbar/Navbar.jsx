@@ -54,7 +54,16 @@ const Navbar = () => {
           </ToolTips>
         ))}
       </div>
-      <label htmlFor="check" className="control-btn">
+      <label
+        htmlFor="check"
+        className={`control-btn
+    ${
+      pathname === "/"
+        ? "border-yellow control-btn-home-checked"
+        : "control-btn-checked"
+    }
+    `}
+      >
         <input
           type="checkbox"
           name="check"

@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Text = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="mb-5 pb-2 w-11/12 xl:w-10/12 text-shadow dark:text-shadow-dark h-[90%] xl:h-[75%] 2xl:h-[90%] rounded-lg flex bg-neutral-200/60 dark:bg-slate-700">
       <div className="text-xl w-full xl:w-[84%] h-min text-left p-3 xl:relative xl:top-1/2 xl:-translate-y-1/2 xl:left-28">
@@ -8,10 +11,16 @@ const Text = () => {
           Bonjour
         </h1>
         <div className="text-center md:w-2/3 md:mx-auto md:mb-10 xl:w-1/3 mb-5 flex items-center justify-between xl:ml-2">
-          <button className="py-1 w-32 md:w-40 px-5 rounded-full dark:text-slate-800 border bg-blue border-blue text-white dark:border-yellow dark:bg-yellow mr-4 duration-500 hover:bg-white hover:dark:bg-slate-800 hover:text-blue hover:dark:text-white">
+          <button
+            onClick={() => navigate()}
+            className="py-1 w-32 md:w-40 px-5 rounded-full dark:text-slate-800 border bg-blue border-blue text-white dark:border-yellow dark:bg-yellow mr-4 duration-500 hover:bg-white hover:dark:bg-slate-800 hover:text-blue hover:dark:text-white"
+          >
             CV
           </button>
-          <button className="border border-black dark:border-white py-1 w-32 md:w-40 px-5 rounded-full bg-white dark:bg-slate-800 duration-500 ease-in hover:bg-blue hover:dark:bg-yellow hover:border-blue hover:dark:border-yellow hover:text-white">
+          <button
+            onClick={() => navigate("/projects")}
+            className="border border-black dark:border-white py-1 w-32 md:w-40 px-5 rounded-full bg-white dark:bg-slate-800 duration-500 ease-in hover:bg-blue hover:dark:bg-yellow hover:border-blue hover:dark:border-yellow hover:text-white"
+          >
             PROJETS
           </button>
         </div>

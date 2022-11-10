@@ -5,7 +5,7 @@ import LogoLanguages from "./LogoLanguages";
 const FontSide = ({ item }) => {
   return (
     <div
-      className={`absolute top-0 left-0 ${item.bgStyles} flex flex-col justify-center items-center text-6xl h-full w-full backface-hidden`}
+      className={`cursor-grab absolute top-0 left-0 ${item.bgStyles} flex flex-col justify-center items-center text-6xl h-full w-full backface-hidden`}
     >
       <Title item={item} />
       <LogoLanguages item={item} />

@@ -34,8 +34,8 @@ const DarkMode = () => {
       className={`text-2xl fixed z-50 top-4 right-4 xl:text-3xl cursor-pointer ${
         colorTheme === "dark"
           ? pathname === "/"
-            ? "text-white"
-            : "text-black"
+            ? "hidden"
+            : "text-slate-600"
           : "moon_colors "
       }`}
     >

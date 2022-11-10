@@ -5,7 +5,7 @@ import Contact from "../components/Contact/Contact";
 import Hero from "../components/Hero/Hero";
 import Hireme from "../components/Hireme";
 import Project from "../components/Project/Project";
-import Skills from "../components/Skills";
+import Skills from "../components/Skills/Skills";
 
 function App() {
   return (

@@ -71,7 +71,7 @@ const TextAnimation = () => {
           fadeOutDelay={200}
           showCursor
           cursorChar=""
-          className="text-lg text-[#ffcf20]"
+          className="text-yellow uppercase"
         />
       </motion.div>
     </div>

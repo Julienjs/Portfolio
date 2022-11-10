@@ -3,6 +3,12 @@ const plugin = require("tailwindcss/plugin");
 
 const Myclass = plugin(function ({ addUtilities }) {
   addUtilities({
+    ".stroke-text": {
+      color: "black",
+      textShadow:
+        "-0.7px -0.7px 0 white, 0.7px -0.7px 0 white, -0.7px 0.7px 0 white, 0.7px 0.7px 0 white",
+      letterSpacing: "0.20rem",
+    },
     ".-my-rotate-y-180": {
       transform: "rotateY(-180deg)",
     },
@@ -39,6 +45,21 @@ const Myclass = plugin(function ({ addUtilities }) {
       background: "#ffffff",
       boxShadow: "inset 5px 5px 10px #d1d1d1,inset -5px -5px 10px #ffffff",
     },
+    // ".scrollbar": {
+    //   overflowY: "auto",
+    //   scrollbarWidth: "thin",
+    // },
+    // ".scrollbar::-webkit-scrollbar": {
+    //   height: "2px",
+    //   width: "5px",
+    // },
+    // ".scrollbar::-webkit-scrollbar-thumb": {
+    //   backgroundColor: "rgb(30 41 59)",
+    //   borderRadius: "15px",
+    // },
+    // ".scrollbar::-webkit-scrollbar-track-piece": {
+    //   backgroundColor: "black",
+    // },
   });
 });
 
@@ -68,7 +89,7 @@ module.exports = {
       },
       colors: {
         yellow: "#ffcf20",
-        blue: "#3598FE",
+        blue: "#5333ed",
       },
       transitionProperty: {
         width: "width",
